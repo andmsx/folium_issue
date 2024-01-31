@@ -7,12 +7,15 @@ st.set_page_config(
         layout = "wide",
         initial_sidebar_state="collapsed")
 
+# URL of the image hosted on GitHub or other cloud service
+image_url = 'https://raw.githubusercontent.com/andmsx/folium_issue/main/img_layer.tiff'
+
 
 # Function to create a folium map with an image overlay
 def create_map(pixelated):
     map_ = folium.Map(location=[0, 0], zoom_start=2)
     image = folium.raster_layers.ImageOverlay(
-        image='data/temp/img_layer.tiff',
+        image = image_url,
         bounds=[[-90, -180], [90, 180]],
         pixelated=pixelated,
         name="Raster Layer"
